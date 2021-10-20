@@ -62,7 +62,7 @@ void print_array(int* a, int n) {
 }
 
 void read_array(int* a, int n) {
-    printf("Remplissez ce tableau primaire de %d éléments :\n", n);
+    printf("Remplissez ce tableau primitif de %d éléments :\n", n);
     for(int i = 0 ; i < n ; i++) {
 	printf("%d>",i);
 	scanf("%d", &a[i]);
