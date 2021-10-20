@@ -19,18 +19,22 @@ int main () {
     
     int n = 3;
     int tab[n];
+
+    printf("Exercice 1 :\n");
     print_array(tab, n);
     read_array(tab, n);
     print_array(tab, n);
 	
 
     //Exercice 2
-    
+
+    printf("Exercice 2 :\n");
     printf("max = tab[%d] = %d\n",max_pos(tab,n),max(tab,n));
     printf("search(3) => tab[%d]\n", search(3,tab,n));
 
     //Exercice 3
 
+    printf("Exercice 3 :\n");
     printf("Naïf vs Eratosthène : n = ");
     scanf("%d", &n);
     int tab2[n+1];
@@ -47,9 +51,8 @@ int main () {
     read_polynome(tab3, n);
     printf("x = ");
     scanf("%lf",&x);
-    printf("P(%lf.2) = %.2lf\n",x,eval(x, tab3, n));
-    printf("P(%lf.2) = %.2lf\n",x,eval2(x, tab3, n));
-
+    printf("P(%.2lf) = %.2lf\n",x,eval(x, tab3, n));
+    printf("P(%.2lf) = %.2lf\n",x,eval2(x, tab3, n));
 }
 
 void print_array(int* a, int n) {
