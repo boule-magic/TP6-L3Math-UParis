@@ -34,6 +34,10 @@ int main () {
     printf("Naïf (n**2) : nombre de nombres premier dans [2,%d] = %d\n",n,prime(n));
     printf("Eratosthène (n) : nombre de nombres premier dans [2,%d] = %d\n",n,eratosthene(tab2, n+1));
 
+    //Exercice 4
+
+    
+
 }
 
 void print_array(int* a, int n) {
