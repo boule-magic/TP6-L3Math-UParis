@@ -8,6 +8,9 @@ int search(int v, int* a, int n);
 int prime_or_not(int n);
 int prime(int n);
 int eratosthene(int* tab, int n);
+void read_polynome(double* a, int n);
+double eval(double x, double* a, int n);
+double eval2(double x, double* a, int n);
 
 
 int main () {
@@ -36,7 +39,16 @@ int main () {
 
     //Exercice 4
 
-    
+    double x;
+    printf("Exercice 4 :\n");
+    printf("Taille du polynôme = ");
+    scanf("%d",&n);
+    double tab3[n];
+    read_polynome(tab3, n);
+    printf("x = ");
+    scanf("%lf",&x);
+    printf("P(%lf.2) = %.2lf\n",x,eval(x, tab3, n));
+    printf("P(%lf.2) = %.2lf\n",x,eval2(x, tab3, n));
 
 }
 
@@ -91,7 +103,7 @@ int prime_or_not(int n) {
 
 int prime(int n) {
     int compteur = 0;
-    for(int i = 2 ; i < n ; i++) {
+    for(int i = 2 ; i <= n ; i++) {
 	if(prime_or_not(i) == 1) {
 	    compteur++;
 	    //printf("%d\n", i);
@@ -119,4 +131,28 @@ int eratosthene(int* tab, int n) {
     return compteur;
 }
 
+void read_polynome(double* a, int n) {
+    printf("Saisissez les %d coefficients du polynôme :\n", n);
+    for(int i = 0 ; i < n ; i++) {
+	printf("a%d>",i);
+	scanf("%lf", &a[i]);
+    }
+}
+
+double eval(double x, double* a, int n) {
+    double xpowi = x, result = a[0];
+    for(int i = 1 ; i < n ; i++) {
+	result += a[i]*xpowi;
+	xpowi *= x;
+    }
+    return result;
+}
+
+double eval2(double x, double* a, int n) {
+    double result = a[n-1];
+    for(int i = n-2 ; i >= 0 ; i--) {
+	result = result*x + a[i];
+    }
+    return result;
+}
 
